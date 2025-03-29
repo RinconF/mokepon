@@ -1,75 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MOKEPON</title>
-        <script src="./js/mokepon.js"></script>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-
-    <body>
-        <section id="seleccionar-mascota">
-            <h1 class="titulo">Mokepon</h1>
-
-            <h2 class="subtitulo">Elige tu Mascota:</h2>
-
-            <div class="tarjetas">
-                <label class="tarjeta-de-mokepon" for="hipodoge">
-                    <P>Hipodoge</P>
-                    <img src="./assets/hipodoge.png" alt="Hipodoge">
-                </label>
-                <input type="radio" name="mascota" id="hipodoge">
-    
-                <label class="tarjeta-de-mokepon" for="capipepo">
-                    <p>Capipepo</p>
-                    <img src="assets/capipepo.png" alt="Capipepo">
-                </label>
-                <input type="radio" name="mascota" id="capipepo">
-    
-                <label class="tarjeta-de-mokepon" for="ratigueya">
-                    <p>Ratigueya</p>
-                    <img src="assets/ratigueya.png" alt="Ratigueya">
-                </label>
-                <input type="radio" name="mascota" id="ratigueya">
-            </div>
-
-            <button id="boton-mascota">Seleccionar</button>
-        </section>
-
-
-        <section id="seleccionar-ataque">
-            <h1 class="titulo">Mokepon</h1>
-            <h2 class="subtitulo">Elige tu Ataque:</h2>
-            
-            <div>
-                <button id="boton-fuego" class="boton-ataque">Fuego 🔥</button>
-                <button id="boton-agua" class="boton-ataque">Agua 💧</button>
-                <button id="boton-tierra" class="boton-ataque">Tierra 🌱</button>
-            </div>
-
-
-            <div id="mensajes">
-                <p id="resultado">Mucha Suerte!</p>
-
-                <section id="reiniciar">
-                    <button id="boton-reiniciar">Reiniciar</button>
-                </section>
-            </div>
-
-            <div class="ataques">
-                <div>
-                    <p id="vidas-jugador">3</p>
-                    <p id="mascota-jugador"></p>
-                    <p id="ataques-del-jugador"></p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokepon</title>
+    <script src="/mokepon/js/mokepon.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="seleccionar-mascota">
+        <h1 class="titulo">Mokepon</h1>
+        <h2 class="subtitulo">Elige a tu Mokepon</h2>
+        <div id="carousel-container">
+            <button id="left-arrow">←</button>
+            <div id="carousel">
+                <div class="card-item" data-nombre="Eternatus">
+                    <img src="img/Eternatus.png" alt="Eternatus">
                 </div>
-
-                <div>
-                    <p id="vidas-enemigo">3</p>
-                    <p id="mascota-enemigo"></p>
-                    <p id="ataques-del-enemigo"></p>
-                </div>                
+                <div class="card-item" data-nombre="Giratina">
+                    <img src="img/Giratina.webp" alt="Giratina">
+                </div>
+                <div class="card-item" data-nombre="Ho-Oh">
+                    <img src="img/Ho-Oh.png" alt="Ho-Oh">
+                </div>
+                <div class="card-item" data-nombre="Mewtwo">
+                    <img src="img/Mewtwo.webp" alt="Mewtwo">
+                </div>
+                <div class="card-item" data-nombre="Rayquaza">
+                    <img src="img/Rayquaza.jpg" alt="Rayquaza">
+                </div>
+                <div class="card-item" data-nombre="Zygarde">
+                    <img src="img/Zygarde.webp" alt="Zygarde">
+                </div>
+                <div class="card-item" data-nombre="Necrozma">
+                    <img src="img/Necrozma.webp" alt="Necrozma">
+                </div>
+                <div class="card-item" data-nombre="Cresselia">
+                    <img src="img/Cresselia.jpg" alt="Cresselia">
+                </div>
             </div>
-        </section>
-    </body>
+            <button id="right-arrow">→</button>
+        </div>
+        <button id="boton-mascota">Seleccionar</button>
+    </section>
+
+    <section id="seleccionar-ataque" style="display: none;">
+        <h1 class="titulo">Mokepon</h1>
+        <h2 class="subtitulo">Elige tu Ataque:</h2>
+        <div>
+            <button id="boton-fuego" class="boton-ataque">Fuego 🔥</button>
+            <button id="boton-agua" class="boton-ataque">Agua 💧</button>
+            <button id="boton-tierra" class="boton-ataque">Tierra 🌱</button>
+        </div>
+        <div id="mensajes">
+            <p id="resultado">¡Mucha Suerte!</p>
+            <section id="reiniciar" style="display: none;">
+                <button id="boton-reiniciar">Reiniciar</button>
+            </section>
+        </div>
+        <div class="ataques">
+            <div>
+                <p>Vidas Jugador: <span id="vidas-jugador">3</span></p>
+                <p>Mokepon Jugador: <img id="mascota-jugador" src="" alt="Mokepon Jugador" class="mokepon-img"></p>
+                <p>Ataque Jugador: <span id="ataques-del-jugador"></span></p>
+            </div>
+            <div>
+                <p>Vidas Enemigo: <span id="vidas-enemigo">3</span></p>
+                <p>Mokepon Enemigo: <img id="mascota-enemigo" src="" alt="Mokepon Enemigo" class="mokepon-img"></p>
+                <p>Ataque Enemigo: <span id="ataques-del-enemigo"></span></p>
+            </div>
+        </div>
+    </section>
+</body>
 </html>
